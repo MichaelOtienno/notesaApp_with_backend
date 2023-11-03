@@ -28,12 +28,15 @@ const createNote = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             return res.status(400).json({ error: error.details[0].message });
         }
         let note_id = (0, uuid_1.v4)();
-        const pool = yield mssql_1.default.connect(sqlConfig_1.sqlConfig);
-        const request = pool.request();
-        request.input("note_id", mssql_1.default.VarChar, note_id);
-        request.input("note_title", mssql_1.default.VarChar, note_title);
-        request.input("note_body", mssql_1.default.VarChar, note_body);
-        const result = yield request.execute('createNote');
+        // const pool = await mssql.connect(sqlConfig);
+        // const request = pool.request();
+        // request.input("note_id", mssql.VarChar, note_id);
+        // request.input("note_title", mssql.VarChar, note_title);
+        // request.input("note_body", mssql.VarChar, note_body);
+        // const result = await request.execute('createNote');
+        let result = yield dbhelper.execute('createNote', {
+            note_id, note_title, note_body
+        });
         if (result.returnValue !== 0) {
             return res.status(500).json({ error: "Failed to create note." });
         }

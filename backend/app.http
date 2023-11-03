@@ -1,10 +1,10 @@
 
 
 #create note
-post http://localhost:3600/notes/create
+post http://localhost:3500/notes/create
 Content-Type: application/json
 
 {
-    "note_title": "cycling",
+    "note_title": "girltrip",
     "note_body": "ride to Mombasa"
 }

@@ -18,13 +18,18 @@ export const createNote = async (req: Request, res: Response) => {
 
         let note_id = v4();
 
-        const pool = await mssql.connect(sqlConfig);
-        const request = pool.request();
-        request.input("note_id", mssql.VarChar, note_id);
-        request.input("note_title", mssql.VarChar, note_title);
-        request.input("note_body", mssql.VarChar, note_body);
+        // const pool = await mssql.connect(sqlConfig);
+        // const request = pool.request();
+        // request.input("note_id", mssql.VarChar, note_id);
+        // request.input("note_title", mssql.VarChar, note_title);
+        // request.input("note_body", mssql.VarChar, note_body);
+         // const result = await request.execute('createNote');
 
-        const result = await request.execute('createNote');
+          let result =  await dbhelper.execute('createNote',{
+            note_id,note_title,note_body
+        });
+
+       
 
         if (result.returnValue !== 0) {
             return res.status(500).json({ error: "Failed to create note." });
