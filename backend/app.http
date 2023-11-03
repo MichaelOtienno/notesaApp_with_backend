@@ -1,0 +1,10 @@
+
+
+#create note
+post http://localhost:3600/notes/create
+Content-Type: application/json
+
+{
+    "note_title": "cycling",
+    "note_body": "ride to Mombasa"
+}

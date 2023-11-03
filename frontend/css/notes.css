@@ -1,0 +1,182 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    gap: 60px;
+    border-bottom: solid gray 1px;
+    margin-bottom: 10px;
+}
+
+.buttons button {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: solid gray 1px;
+    color: blue;
+}
+
+.buttons button:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.for {
+    border: solid grey 1px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px;
+
+}
+
+.for button {
+    padding: 10px;
+    border: solid gray 1px;
+    border-radius: 5px;
+    color: blue;
+    font-weight: bold;
+}
+
+.for button:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+input {
+    width: 350px;
+    padding: 10px;
+    display: block;
+    margin: 10px;
+}
+
+.left {
+    display: flex;
+    width: 70%;
+    height: 80%;
+    flex-wrap: wrap;
+
+}
+
+.left ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.task-container {
+    width: 200px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    border: solid gray 1px;
+    font: 20px;
+    gap: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.spann {
+    font-size: 24px;
+}
+
+.right {
+    grid-area: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 50%;
+}
+
+.taskEdit {
+    height: 80%;
+    width: 80%;
+    border: solid rgb(202, 32, 32) 2px;
+    border-radius: 5px;
+
+}
+
+.edit-button {
+    color: blue;
+    font-weight: bold;
+    padding: 10px;
+    width: 40%;
+
+}
+
+.checklist-button {
+    width: 20px;
+    height: 20px;
+}
+
+.taskform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid rgb(139, 133, 133) 1px;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.inputt {
+    margin: 20px;
+    width: 350px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    border: solid gray 1px;
+
+
+}
+
+.inputtt {
+    display: block;
+    height: 30px;
+}
+
+.save-btn {
+    padding: 10px;
+    margin: 10px;
+    color: rgb(31, 29, 29);
+    border: solid gray 1px;
+    border-radius: 5px;
+
+}
+
+.save-btn:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.deleted {
+    padding: 10px;
+    margin: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+
+}
+
+.deleted:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}

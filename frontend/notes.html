@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/notes.css">
+    <title>Notes</title>
+</head>
+
+<body>
+    <div class="nav">
+        <h2>Welcome! Write your notes here</h2>
+
+    </div>
+    <div class="buttons">
+        <button id="view">View Notes</button>
+        <button id="back" style="display: none;">Back</button>
+    </div>
+
+    <div class="for" >
+        <form  id="note_form">
+            <p id="response"></p>
+
+            <input type="text" placeholder="title" id="noteTitle">
+            <input type="textarea" placeholder="body" id="noteBody">
+
+          <button type="submit">AddNote</button>
+
+        </form>
+    </div>
+    <div class="notes">
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script src="dist/index.js"></script>
+
+</html>
