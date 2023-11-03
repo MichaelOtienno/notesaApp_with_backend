@@ -6,35 +6,48 @@ let noteError = document.getElementById('response') as HTMLElement
 note_form.addEventListener('submit', async (e)=>{
     e.preventDefault()
 
-    let title = noteTitle.value.trim()
-    let body = noteBody.value.trim()
+    let note_title = noteTitle.value.trim()
+    let note_body = noteBody.value.trim()
 
-    if (title === '' || body === '') {
+    if (note_title === '' || note_body === '') {
         noteError.textContent = 'please fill all fields'
+        setTimeout(() => {
+            noteError.style.display = 'none'
+            noteError.style.color = 'red'
+            
+        },3000);
+       
         return; 
     }
     try {
-        const response = await fetch('http://localhost:3600/notes/create', {
+        const response = await fetch('http://localhost:3500/notes/create', {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
-                "title": title,
-                "body": body,
+                "note_title": note_title,
+                "note_body": note_body,
               
             })
         });
 
         if (response.ok) {
             const data = await response.json();
+            noteError.textContent = 'note created successfully'
+            noteError.style.color = 'blue'
             console.log(data);
             
         } else {
             const errorData = await response.json();
             console.log("Registration failed. Server returned:", errorData);
             noteError.textContent = `registration failed :${JSON.stringify({errorData})}`
+            setTimeout(() => {
+                noteError.style.color = 'red'
+                
+            },3000);
+            
         }
     } catch (error) {
         const {message}:any
